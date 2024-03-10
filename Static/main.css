@@ -1,0 +1,115 @@
+body {
+    font-family: Helvetica, Arial, sans-serif;
+    background-color: #F0F2F5;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden; /* Prevents scrollbar due to animation */
+}
+
+.container {
+    display: flex;
+    flex-direction: column; /* Stack forms vertically */
+    justify-content: center;
+    align-items: center;
+    animation: fadeIn 0.5s ease-out; /* Smooth appearance on load */
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.form-box {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    margin: 0 20px;
+    transform: scale(1);
+    transition: transform 0.3s ease-in-out; /* Smooth scaling on hover */
+}
+
+.form-box:hover {
+    transform: scale(1.02); /* Slightly enlarge form on hover */
+}
+
+.form-box h1 {
+    color: #1877F2;
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.input-field {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    transition: border-color 0.3s; /* Smooth border color change on focus */
+}
+
+.input-field:focus {
+    border-color: #1877F2; /* Highlight input field on focus */
+    outline: none; /* Removes default focus outline */
+}
+
+.btn-primary {
+    background-color: #1877F2;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    font-size: 18px;
+    transition: background-color 0.3s; /* Smooth background color transition */
+}
+
+.btn-primary:hover {
+    background-color: #165db6;
+}
+
+.link {
+    text-align: center;
+    display: block;
+    margin-top: 15px;
+    color: #1877F2;
+    text-decoration: none;
+    transition: color 0.3s; /* Smooth color transition on hover */
+}
+
+.link:hover {
+    text-decoration: underline;
+    color: #165db6; /* Darker blue on hover for consistency */
+}
+
+/* Styles for "File Deleted" Notification */
+.toast {
+    background-color: #ffdddd;
+    border-left: 5px solid #f44336; /* Red accent for deletion */
+    color: #333;
+    padding: 16px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    font-family: 'Arial', sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    animation: slideIn 0.5s ease-out;
+}
+
+@keyframes slideIn {
+    from { transform: translateY(20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+.toast-header {
+    background-color: #f44336;
+    color: white;
+    font-weight: bold;
+}
