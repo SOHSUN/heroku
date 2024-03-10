@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <!-- Include Bootstrap CSS and custom styles -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Add any custom styles for admin dashboard here */
+    </style>
+</head>
+<body>
+<div class="container mt-5">
+    <h2>Admin Dashboard</h2>
+    <div id="userList"></div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="{{ url_for('static', filename='js/app.js') }}"></script>
+<script>
+    // Call listUsers function when the admin page is loaded
+    document.addEventListener('DOMContentLoaded', function() {
+        listUsers();
+    });
+</script>
+</body>
+</html>

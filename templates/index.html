@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cloud Storage App</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Add any custom styles for the main application here */
+    </style>
+</head>
+<body>
+<div class="container mt-5">
+    <!-- Welcoming Message -->
+    <div class="alert alert-info" role="alert">
+        <h4 class="alert-heading">FLASK BASED CLOUD STORAGE APPLICATION - 10 MB FREE</h4>
+        <p>Welcome to your cloud storage solution! Sign up now and get 10MB of free storage space.</p>
+        <button onclick="window.location.href='/admin'" class="btn btn-secondary">Admin Dashboard</button>
+
+    </div>
+
+    <h2>Cloud Storage Application</h2>
+    <div id="fileList"></div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="{{ url_for('static', filename='js/app.js') }}"></script>
+<script>
+    // Call fetchFiles function when the main application page is loaded
+    document.addEventListener('DOMContentLoaded', function() {
+        fetchFiles();
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Files</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background: linear-gradient(135deg, #5ee7df 0%, #b490ca 100%);
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .container {
+            background-color: #ffffff;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            width: 80%;
+            max-width: 600px;
+        }
+        .user-info {
+            position: fixed;
+            right: 20px;
+            top: 20px;
+            display: flex;
+            align-items: center;
+            animation: fadeIn 0.5s ease-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        .username-circle {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: #f0ad4e;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-right: 10px;
+            font-weight: bold;
+            animation: bounce 1s infinite alternate;
+        }
+        @keyframes bounce {
+            from { transform: translateY(0); }
+            to { transform: translateY(-5px); }
+        }
+        .file-upload-wrapper, .file-list-wrapper {
+            margin-top: 20px;
+        }
+        button.btn {
+            transition: background-color 0.3s, box-shadow 0.3s;
+        }
+        button.btn:hover {
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+        button.btn-primary {
+            background-color: #5ee7df;
+            border-color: #5ee7df;
+        }
+        button.btn-primary:hover {
+            background-color: #4bc2c5;
+            border-color: #4bc2c5;
+        }
+        button.btn-warning {
+            background-color: #f0ad4e;
+            border-color: #f0ad4e;
+        }
+        button.btn-warning:hover {
+            background-color: #eb9e34;
+            border-color: #eb9e34;
+        }
+    </style>
+</head>
+<body>
+<div class="user-info">
+    <div class="username-circle">U</div>
+    <button id="logoutButton" class="btn btn-warning">Logout</button>
+</div>
+<div class="container">
+    <h2>Manage Your Files</h2>
+    <div class="file-upload-wrapper">
+        <input type="file" id="fileInput" multiple class="form-control">
+        <button onclick="uploadFile()" class="btn btn-primary mt-2">Upload</button>
+    </div>
+    <div class="file-list-wrapper">
+        <h3>Your Files</h3>
+        <ul id="fileList" class="list-group">
+            <!-- Files will be listed here -->
+        </ul>
+    </div>
+</div>
+<div aria-live="polite" aria-atomic="true" style="position: relative; z-index: 1050;">
+    <div id="toastContainer" style="position: fixed; top: 1rem; right: 1rem;"></div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="{{ url_for('static', filename='js/app.js') }}"></script>
+
+</body>
+</html>
