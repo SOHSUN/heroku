@@ -1,7 +1,6 @@
-import os
-
 # Sample gunicorn configuration file.
-bind = '0.0.0.0:' + str(os.environ.get('PORT', 8000))  # Default port is 8000 if PORT is not set
+bind= '0.0.0.0:' + str(os.getenv("PORT", 8000))
+# bind = '0.0.0.0:8000'
 workers = 4
 accesslog = '-'
 loglevel = 'info'
