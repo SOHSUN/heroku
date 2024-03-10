@@ -7,7 +7,6 @@ from usagemntrserv import UsageMonitorService
 from viewgeneratorserv import ViewGeneratorService
 from werkzeug.utils import secure_filename
 from flask import session
-import os
 import logging
 
 logging.basicConfig(filename='application.log', level=logging.INFO, format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
